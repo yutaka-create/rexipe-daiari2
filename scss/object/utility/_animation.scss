@@ -1,0 +1,72 @@
+// --------------------------------------------------------
+// ① タイトル出現アニメーション（clip-path）用
+// --------------------------------------------------------
+.u-reveal-left {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    will-change: opacity, clip-path;
+    transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s;
+
+    &.is-animated {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+// --------------------------------------------------------
+// ② ふわっと下から出現
+// --------------------------------------------------------
+.u-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform;
+    transition: transform 1s ease-out, opacity 1s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// --------------------------------------------------------
+// ③ 左からスッと出現
+// --------------------------------------------------------
+.u-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    will-change: opacity, transform;
+    transition: transform 0.8s ease-out, opacity 0.8s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// --------------------------------------------------------
+// ④ 右からスッと出現
+// --------------------------------------------------------
+.u-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    will-change: opacity, transform;
+    transition: transform 0.8s ease-out, opacity 0.8s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .u-reveal-left,
+    .u-fade-up,
+    .u-fade-left,
+    .u-fade-right {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: inset(0 0 0 0) !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+}

@@ -1,0 +1,9 @@
+@use "../../foundation/vars" as v;
+
+.c-section-title {
+    display: block;
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid v.$color-border;
+}

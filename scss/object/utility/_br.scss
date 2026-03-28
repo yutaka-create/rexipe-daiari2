@@ -1,0 +1,10 @@
+@use "../../foundation/mixin" as m;
+
+
+.u-br-pc {
+    display: inline;
+
+    @include m.mq-sp {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
+
+.l-container {
+    width: 100%;
+    max-width: v.$container-max-width;
+    margin-inline: auto;
+    padding-inline: v.$gutter;
+
+    @include m.mq-sp {
+        padding-inline: v.$padding-side;
+    }
+
+    &--no-gutter {
+        max-width: v.$layout-width;
+        padding-inline: 0;
+    }
+}

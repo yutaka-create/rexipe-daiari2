@@ -1,0 +1,19 @@
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.c-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 232px;
+    font-size: v.$font-size-sm;
+    padding: 18px 60px;
+    border: 1px solid v.$color-text;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+    @include m.hover {
+        color: v.$color-white;
+        background-color: v.$color-text;
+    }
+
+}

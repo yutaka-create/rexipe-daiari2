@@ -1,0 +1,43 @@
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
+
+.l-footer {
+    font-size: v.$font-size-xs;
+    padding-bottom: 1000px;
+    color: v.$color-text;
+
+    &__nav {
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__item {
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                transition-delay: #{$i * 0.15}s;
+            }
+        }
+    }
+
+    &__link {
+        transition: text-decoration 0.3s;
+
+        @include m.hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+
+        small {
+            font-size: v.$font-size-xs;
+        }
+    }
+}
